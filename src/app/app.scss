@@ -43,3 +43,18 @@
 //  }
 //
 //}
+.toolbar {
+  height: 56px;
+  .toolbar-background {
+    background: #4A4A4A;
+  }
+  .toolbar-title {
+    margin-left: 16px;
+    font-weight: normal;
+    color: #FFFFFF;
+  }
+}
+.bar-button-default-ios {
+  margin-left: 16px;
+  color: #3DA6FF;
+}
