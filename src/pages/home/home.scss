@@ -8,3 +8,24 @@ page-home {
   height: 25vh;
   display: inline-block
 }
+
+.home-container {
+  background-color: #4A4A4A;
+  font-family: roboto;
+  .greeting {
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    margin-top: 1.5px;
+  }
+  .body1 {
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+  }
+  .button {
+    height: 36px;
+    background-color: #3DA6FF;
+    
+  }
+}
