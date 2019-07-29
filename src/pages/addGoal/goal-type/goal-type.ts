@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, PopoverController } from 'ionic-angular';
 import {GoalDetailsServiceProvider} from "../../../providers/goal-details-service/goal-details-service";
 import {SelectSubgoalsPage} from "../select-subgoals/select-subgoals";
 import {GlobalFunctionsServiceProvider} from "../../../providers/global-functions-service/global-functions-service";
 import {EnterTextGoalPage} from "../enter-text-goal/enter-text-goal";
+import {PopoverInfo} from "../popover/popover";
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 
@@ -20,6 +21,7 @@ export class GoalTypePage {
   private selectedGoals : string[]= [];
 
   constructor(public navCtrl: NavController,
+              public popoverCtrl: PopoverController,
               public goalDetailsServiceProvider: GoalDetailsServiceProvider,
               public globalFunctions: GlobalFunctionsServiceProvider) {
     this.selectedGoals = [];
@@ -48,6 +50,14 @@ export class GoalTypePage {
     goal.colors = this.globalFunctions.buttonColors(false);
   }
 
+  onInfoClick() {
+    let informationPopover = this.popoverCtrl.create(PopoverInfo, {},
+    {
+      showBackdrop: true,
+      cssClass: 'custom-info-popover'
+    });
+    informationPopover.present();
+  }
 
   continueSetup() {
     this.selectedGoals.sort();

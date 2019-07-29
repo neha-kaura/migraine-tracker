@@ -34,7 +34,7 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
+  primary:    #3DA6FF,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -72,6 +72,13 @@ $colors: (
 
 @import "ionic.theme.default";
 
+$background-color: #4A4A4A;
+$text-color: #FFFFFF;
+$button-ios-border-radius: 2px;
+$button-ios-height: 36px;
+$button-ios-font-size: 14px;
+$button-ios-strong-font-weight: 500;
+$button-ios-text-color: #000000;
 
 // Ionicons
 // --------------------------------------------------

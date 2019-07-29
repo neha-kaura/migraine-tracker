@@ -1,0 +1,21 @@
+popover {
+  .custom-goals-popover{
+    background-color: inherit;
+    font-family: roboto;
+    
+    .popover-heading {
+      font-size: 16px;
+      margin: 0 0 24px 0;
+    }
+    .paragraph {
+      margin: 0 0 24px 0;
+      font-size: 14px;
+      color: #dedede;
+    }
+    .dismiss-button {
+      color: #3DA6FF;
+      font-weight: 500;
+
+    }
+}
+}

@@ -19,6 +19,7 @@ import { GoalDetailsServiceProvider } from '../providers/goal-details-service/go
 import {SelectSubgoalsPage} from "../pages/addGoal/select-subgoals/select-subgoals";
 import { GlobalFunctionsServiceProvider } from '../providers/global-functions-service/global-functions-service';
 import {EnterTextGoalPage} from "../pages/addGoal/enter-text-goal/enter-text-goal";
+import {PopoverInfo} from "../pages/addGoal/popover/popover";
 import {DataConfigPage} from "../pages/addGoal/data-config/data-config";
 import { DataDetailsServiceProvider } from '../providers/data-details-service/data-details-service';
 import {AddCustomDataPage} from "../pages/addGoal/add-custom-data/add-custom-data";
@@ -46,8 +47,9 @@ import {DataElementTrackingComponent} from "../components/data-element-tracking/
     HomePage,
     GoalTypePage,
     SelectSubgoalsPage,
-    LoginPage,
+    // LoginPage,
     EnterTextGoalPage,
+    PopoverInfo,
     DataConfigPage,
     AddCustomDataPage,
     SelectTrackingFrequencyPage,
@@ -77,9 +79,10 @@ import {DataElementTrackingComponent} from "../components/data-element-tracking/
     MyApp,
     HomePage,
     GoalTypePage,
-    LoginPage,
+    // LoginPage,
     SelectSubgoalsPage,
     EnterTextGoalPage,
+    PopoverInfo,
     DataConfigPage,
     AddCustomDataPage,
     SelectTrackingFrequencyPage,

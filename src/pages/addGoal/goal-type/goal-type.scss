@@ -1,5 +1,40 @@
 page-goal-type {
-
+  .heading {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-top: 1.5px;
+  }
+  .goals-list {
+    .goal {
+      background-color: #4A4A4A;
+      color: white;
+      font-family: roboto;
+      .goal-name{
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .goal-effort{
+        font-size: 12px;
+        font-style: italic;
+        margin-top: 8px;
+      }
+      .goal-description{
+        font-size: 12px;
+        margin-top: 4px;
+      }
+    }
+  }
+  .custom-goals {
+    display:flex;
+    flex-direction: column;
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
   //button.active{
   //  color: light
   //}
@@ -17,6 +52,3 @@ page-goal-type {
   //  justify-content: flex-end;
   //  display: flex;
   //}
-
-
-}

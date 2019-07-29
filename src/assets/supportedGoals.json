@@ -1,10 +1,9 @@
 [
-    { 
+    {
         "goalName": "Learning about my migraines",
         "goalID": "1",
         "goodChoiceIf": [
-            "You are new to migraine tracking",
-            "You are making a change"
+            "you are new to migraine tracking or are making a change."
         ],
         "iconName": "school",
         "examples": [
@@ -12,24 +11,24 @@
             "I want to know whether changing my diet is affecing my migraines."
         ],
         "subgoals": true,
-        "effort": "medium"
+        "effort": "Medium"
     },
     {
-        "goalName": "Predicting future migraines",
+        "goalName": "Predicting my migraines",
         "goalID": "2",
         "goodChoiceIf": [
-            "You know what factors affect your migraine and are willing to track frequently so you know when those factors are accumulating"
+            "you want to learn to predict your migraines."
         ],
         "iconName": "alarm",
         "examples": ["I want to know if I'm likely to get a migraine today."],
         "subgoals": false,
-        "effort": "high"
+        "effort": "High"
     },
     {
         "goalName": "Monitoring my migraines",
         "goalID": "3",
         "goodChoiceIf": [
-            "You just want to keep track of your migraines (or related data)"
+            "if you just want to keep track of your migraine data."
         ],
         "examples": [
             "I want to know how often I get migraines or use medication",
@@ -37,6 +36,6 @@
         ],
         "iconName": "calendar",
         "subgoals": true,
-        "effort": "low"
+        "effort": "Low"
     }
 ]

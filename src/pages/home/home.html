@@ -7,13 +7,18 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="home-container" padding>
-  <div *ngIf="activeGoals['goals']===undefined">
+<ion-content padding>
+  <div class="home-container" *ngIf="activeGoals['goals']===undefined">
     <div class="greeting">Hello!</div>
     <div class="body1"> You have not configured any migraine tracking goals.  Add a goal to start tracking! </div>
-    <button class="button" ion-button icon-start (click)="addFirstGoal()">
-      Configure my goals
-    </button>
+    <div class="configure-button">
+      <button ion-button color="primary" icon-start (click)="addFirstGoal()">
+        CONFIGURE MY GOALS
+      </button>
+    </div>
+    <div class="add-new">
+      <img src="../assets/imgs/add_new.png"/>
+    </div>
   </div>
 
 

@@ -7,18 +7,42 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Select Tracking Goals</ion-title>
+    <ion-title>Configure Goals</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <h3>What goal(s) do you have for your migraine tracking? </h3>
+  <div class="heading">Choose the goals you have for your migraine tracking? </div>
+  <ion-list no-lines class="goals-list" *ngFor="let goal of goalList">
+    <ion-item class="goal" text-wrap>
+      <ion-checkbox checked="false"></ion-checkbox>
+      <ion-label>
+        <div class="goal-name">{{goal['goalName']}}</div>
+        <div class="goal-effort">{{goal['effort']}} effort</div>
+        <div class="goal-description">May be a good choice if {{goal['goodChoiceIf']}}</div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="custom-goals">
+    <div class="header">
+      <div class="heading">Custom goals</div>
+      <div><ion-icon class="info icon" name="ios-information-circle" (click)="onInfoClick()"></ion-icon></div>
+    </div>
+    <div>
+      <ion-item>
+        <ion-textarea [(ngModel)]="textGoals" rows="6" placeholder="Add a custom goal ..."></ion-textarea>
+      </ion-item>
+    </div>
+  </div>
 
   <!--<div class="slides-container">-->
-  <ion-slides pager="true" #slides>
-    <ion-slide *ngFor="let goal of goalList">
+  <!-- <ion-slides pager="true" #slides>
+    <ion-slide *ngFor="let goal of goalList"> -->
+
+    <!-- Already commented -->
 
       <!--<button type="submit" float-left ion-button  color="primary" class="btnPrev" (click)="prev()">-->
       <!--<ion-icon ion-left name="arrow-back"></ion-icon>-->
@@ -28,9 +52,11 @@
       <!--<ion-icon name="arrow-forward"></ion-icon>-->
       <!--</button>-->
 
-      <ion-card class="goalCard">
-      <ion-item padding text-wrap>
+    <!-- Already commented -->
 
+      <!-- <ion-card class="goalCard">
+
+      <ion-item padding text-wrap>
           <ion-icon name="{{goal['iconName']}}"></ion-icon>
           {{goal['goalName']}}
 
@@ -44,7 +70,7 @@
           <h3>Examples:</h3>
           <p *ngFor="let example of goal['examples']">"{{example}}"</p>
         </ion-item>
-        <ion-item>
+      <ion-item>
           <span *ngIf="goal['effort']">Likely requires {{goal['effort']}} effort</span>
         </ion-item>
         <div class = "item item-divider bottom">
@@ -60,22 +86,21 @@
       </ion-card>
     </ion-slide>
 
-    </ion-slides>
+    </ion-slides> -->
 
   <!--</div>-->
 
-  <ion-card>
+  <!-- <ion-card>
     <ion-list>
       <ion-list-header>Selected Goals</ion-list-header>
       <div>
         <ion-item text-wrap *ngFor="let goal of selectedGoals">{{goal}}</ion-item>
       </div>
     </ion-list>
-  </ion-card>
+  </ion-card> -->
 
 
-  <button float-right ion-button (click)="continueSetup()" [color]="selectedGoals.length > 0 ? 'primary': 'light' "
-          [disabled]="selectedGoals.length === 0">
+  <button float-right ion-button (click)="continueSetup()" [color]="selectedGoals.length > 0 ? 'primary': 'light' ">
     Continue
   </button>
 

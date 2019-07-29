@@ -46,11 +46,12 @@ export class HomePage {
   }
 
   login() {
-    let customDataModal = this.modalCtrl.create(LoginPage);
-    customDataModal.onDidDismiss(() => {
-      this.loggedIn();
-    });
-    customDataModal.present();
+    // let customDataModal = this.modalCtrl.create(LoginPage);
+    // customDataModal.onDidDismiss(() => {
+    //   this.loggedIn();
+    // });
+    // customDataModal.present();
+    return this.loggedIn();
   }
 
   loggedIn(){

@@ -1,5 +1,28 @@
 page-home {
-
+  .home-container {
+    background-color: #4A4A4A;
+    font-family: roboto;
+    margin: 0px 8px 0px 8px;
+    display: flex;
+    flex-direction: column;
+    .greeting {
+      font-size: 25px;
+      font-weight: bold;
+      color: white;
+      margin-top: 1.5px;
+    }
+    .body1 {
+      font-size: 16px;
+      color: white;
+      margin-top: 10px;
+    }
+    .configure-button {
+      margin: 30px auto auto auto;
+    }
+    .add-new {
+      margin: 30px auto auto auto;
+    }
+  }
 }
 
 .button {z-index: 9999}
@@ -7,25 +30,4 @@ page-home {
 .quickTrackerButton{
   height: 25vh;
   display: inline-block
-}
-
-.home-container {
-  background-color: #4A4A4A;
-  font-family: roboto;
-  .greeting {
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-    margin-top: 1.5px;
-  }
-  .body1 {
-    font-size: 16px;
-    color: white;
-    margin-top: 10px;
-  }
-  .button {
-    height: 36px;
-    background-color: #3DA6FF;
-    
-  }
 }
