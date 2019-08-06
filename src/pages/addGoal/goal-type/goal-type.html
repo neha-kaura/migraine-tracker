@@ -5,11 +5,9 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Configure Goals</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
@@ -17,11 +15,24 @@
   <div class="heading">Choose the goals you have for your migraine tracking? </div>
   <ion-list no-lines class="goals-list" *ngFor="let goal of goalList">
     <ion-item class="goal" text-wrap>
-      <ion-checkbox checked="false"></ion-checkbox>
-      <ion-label>
-        <div class="goal-name">{{goal['goalName']}}</div>
-        <div class="goal-effort">{{goal['effort']}} effort</div>
-        <div class="goal-description">May be a good choice if {{goal['goodChoiceIf']}}</div>
+      <ion-label class="goal-description">
+        <ion-checkbox checked="false" (click)="toggleGoalSelection(goal)"></ion-checkbox>
+        <div>
+          <div class="goal-name">{{goal['goalName']}}</div>
+          <div class="goal-effort">{{goal['effort']}} effort</div>
+          <div class="goal-description">May be a good choice if {{goal['goodChoiceIf']}}</div>
+        </div>
+      </ion-label>
+      <ion-label class="subgoals-list"*ngIf="goal['subgoals']">
+        <div *ngFor="let subgoal of goal['subgoalList'].subgoals">
+            <div class="subgoal-container" >
+              <div>{{subgoal['subgoalName']}}</div>
+              <button ion-button small outline (click)="toggleGoalSelection(subgoal)">
+                Track
+              </button>
+              <button ion-button clear light><ion-icon class="info-icon" name="ios-information-circle" (click)="onInfoClick()"></ion-icon></button>
+            </div>
+        </div>
       </ion-label>
     </ion-item>
   </ion-list>
@@ -29,7 +40,7 @@
   <div class="custom-goals">
     <div class="header">
       <div class="heading">Custom goals</div>
-      <div><ion-icon class="info icon" name="ios-information-circle" (click)="onInfoClick()"></ion-icon></div>
+      <div><ion-icon class="info-icon" name="ios-information-circle" (click)="onInfoClick()"></ion-icon></div>
     </div>
     <div>
       <ion-item>

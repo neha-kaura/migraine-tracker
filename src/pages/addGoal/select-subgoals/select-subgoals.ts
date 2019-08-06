@@ -66,6 +66,7 @@ export class SelectSubgoalsPage {
       this.navCtrl.push(EnterTextGoalPage, {'configPath': this.navParams.data.configPath,
                                                 'goalIDs': this.navParams.data['goalIDs'] });
     }
+    console.log("navParams", this.navParams.data)
   }
 
 

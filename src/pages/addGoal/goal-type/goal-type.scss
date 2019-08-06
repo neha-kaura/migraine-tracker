@@ -10,19 +10,25 @@ page-goal-type {
       background-color: #4A4A4A;
       color: white;
       font-family: roboto;
-      .goal-name{
-        font-size: 18px;
-        font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      .goal-description {
+        display: flex;
+        .goal-name{
+          font-size: 18px;
+          font-weight: 500;
+        }
+        .goal-effort{
+          font-size: 12px;
+          font-style: italic;
+          margin-top: 8px;
+        }
+        .goal-description{
+          font-size: 12px;
+          margin-top: 4px;
+        }
       }
-      .goal-effort{
-        font-size: 12px;
-        font-style: italic;
-        margin-top: 8px;
-      }
-      .goal-description{
-        font-size: 12px;
-        margin-top: 4px;
-      }
+
     }
   }
   .custom-goals {

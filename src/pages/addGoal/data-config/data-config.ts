@@ -26,11 +26,14 @@ export class DataConfigPage {
   private startDate : any = null;
   private today : any = new Date().toISOString();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
               public viewCtrl: ViewController,
               public dataDetailsServiceProvider: DataDetailsServiceProvider,
-              public modalCtrl: ModalController, public globalFunctions: GlobalFunctionsServiceProvider,
+              public modalCtrl: ModalController,
+              public globalFunctions: GlobalFunctionsServiceProvider,
               private couchDBService: CouchDbServiceProvider) {
+                console.log("navParams", this.navParams.data)
     this.configPath = this.navParams.data['configPath'] ? this.navParams.data['configPath'] : [];
   }
 
@@ -40,7 +43,7 @@ export class DataConfigPage {
     let alreadyTracking = this.globalFunctions.getDataIDs(activeGoals['dataToTrack']); // need to add previously configured
     let goals = activeGoals['goals'] ? activeGoals['goals'] : [];
 
-    if(this.configPath.length > 0){ // got here via adding a goal
+    if(this.navParams.data['goalIDs'].length > 0){ // got here via adding a goal
       goals = goals.concat(this.navParams.data['goalIDs']);
       this.dataObject = this.navParams.data['dataPage'];
       this.startDate = this.dataObject.additionalData ? new Date().toISOString() : null;
