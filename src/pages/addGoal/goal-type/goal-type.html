@@ -23,14 +23,15 @@
           <div class="goal-description">May be a good choice if {{goal['goodChoiceIf']}}</div>
         </div>
       </ion-label>
-      <ion-label class="subgoals-list"*ngIf="goal['subgoals']">
+      <ion-label class="subgoals-list"*ngIf="goal['subgoals'] && selectedGoals.includes(goal['goalID'])">
         <div *ngFor="let subgoal of goal['subgoalList'].subgoals">
             <div class="subgoal-container" >
               <div>{{subgoal['subgoalName']}}</div>
-              <button ion-button small outline (click)="toggleGoalSelection(subgoal)">
+              <button *ngIf="!selectedGoals.includes(subgoal['goalID']); else tickbutton" ion-button small outline (click)="toggleGoalSelection(subgoal)">
                 Track
               </button>
-              <button ion-button clear light><ion-icon class="info-icon" name="ios-information-circle" (click)="onInfoClick()"></ion-icon></button>
+              <ng-template #tickbutton><button ion-button light><ion-icon class="info-icon" name="checkmark" (click)="toggleGoalSelection(subgoal)"></ion-icon></button></ng-template>
+              <button ion-button clear light><ion-icon class="info-icon" name="ios-information-circle" (click)="onSubgoalInfoClick(subgoal['subgoalName'], subgoal['goodChoiceIf'], subgoal['examples'])"></ion-icon></button>
             </div>
         </div>
       </ion-label>

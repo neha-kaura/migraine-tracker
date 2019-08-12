@@ -23,6 +23,14 @@ export class GoalTypePage {
   private selectedGoals : string[]= [];
   private textGoals;
 
+  private customGoalInfo = {
+    popoverHeading: "Custom Goals",
+    popoverContent: [
+      "You can write down any migraine tracking or management goals you might want to strive for so you can reflect on them later and share them with your doctor.",
+      "For example, you might have the management goal of reducing your headache days to 4 per month."
+    ]
+  }
+
   constructor(public navCtrl: NavController,
               public popoverCtrl: PopoverController,
               public navParams: NavParams,
@@ -52,6 +60,17 @@ export class GoalTypePage {
     else {
       const index = this.selectedGoals.indexOf(goal.goalID);
       this.selectedGoals.splice(index, 1);
+      if(/^\d+$/.test(goal.goalID)){ // it's just a number so it's not a subgoal
+        let spliceIDs = [];
+        for(let i=0; i<this.selectedGoals.length; i++){
+          if(this.selectedGoals[i].includes(goal.goalID)){
+            spliceIDs.push(i);
+          }
+        }
+        for(let j=spliceIDs.length-1; j>=0; j--){
+          this.selectedGoals.splice(spliceIDs[j], 1);
+        }
+      }
     }
   }
 
@@ -75,9 +94,26 @@ export class GoalTypePage {
   }
 
   onInfoClick() {
-    console.log("I'm inside info")
-    let informationPopover = this.popoverCtrl.create(PopoverInfo, {},
+    let informationPopover = this.popoverCtrl.create(PopoverInfo,{},
     {
+      componentProps: {
+        popoverHeading: this.customGoalInfo.popoverHeading,
+        popoverContent: this.customGoalInfo.popoverContent
+      },
+      showBackdrop: true,
+      cssClass: 'custom-info-popover'
+    });
+    informationPopover.present();
+  }
+
+  onSubgoalInfoClick(popoverHeading, popoverContent, popoverExamples) {
+    let informationPopover = this.popoverCtrl.create(PopoverInfo,{},
+    {
+      componentProps: {
+        popoverHeading,
+        popoverContent,
+        popoverExamples
+      },
       showBackdrop: true,
       cssClass: 'custom-info-popover'
     });
